@@ -19,7 +19,7 @@ format:
     embed-resources: true
 ---
 
-:::{.cr-section}
+:::{.cr-section layout="sidebar-left"}
 
 :::{focus-on="cr-cover"}
 # Identitätsmanagement in EMIGA
@@ -60,6 +60,10 @@ Zur Authentifizierung wird ein Sicherheitsschlüssel (ein sogenannter **Passkey*
 :::{focus-on="cr-webauthn"}
 **Hinweis:** Im Rahmen des Testbetriebs erhalten Sie die Hardware-Token vom RKI.
 :::
+
+:::
+
+:::{.cr-section layout="sidebar-right"}
 
 :::{focus-on="cr-need"}
 ## Schritt-für-Schritt-Anleitung
@@ -170,10 +174,14 @@ Nun werden Sie aufgefordert, Ihren Sicherheitsschlüssel in Ihr Gerät einzufüh
 ![Aufforderung zur Einführung](images/EMIGA_IDM_Auth_09.png)
 :::
 
-:::{focus-on="cr-webauthn"}
+:::{focus-on="cr-insert-token"}
 ### Sicherheitsschlüssel einführen
 
 Führen Sie den Sicherheitsschlüssel in den USB-Eingang Ihres Computers ein.
+:::
+
+:::{#cr-insert-token .scale-to-fill}
+![Sicherheitsschlüssel einführen](images/EMIGA_IDM_Auth_10.png)
 :::
 
 :::{focus-on="cr-step-tap"}
@@ -227,6 +235,10 @@ Nun haben Sie Ihr Nutzendenkonto und den Sicherheitsschlüssel erfolgreich einge
 :::{#cr-step-done1 .scale-to-fill}
 ![Einrichtung abgeschlossen](images/EMIGA_IDM_Auth_15.png)
 :::
+
+:::
+
+:::{.cr-section layout="sidebar-left"}
 
 :::{focus-on="cr-step-open-app"}
 ### Anwendung aufrufen
@@ -304,6 +316,10 @@ Sie befinden sich nun in SurvNetEM und können mit Ihrer Arbeit starten.
 ![Anmeldung abgeschlossen](images/EMIGA_IDM_Auth_21.png)
 :::
 
+:::
+
+:::{.cr-section layout="sidebar-right"}
+
 :::{focus-on="cr-locked"}
 ## Konto gesperrt
 
@@ -363,6 +379,10 @@ In dem sich öffnenden Fenster können Sie den Schlüssel zurücksetzen.
 :::{#cr-reset-manage .scale-to-fill}
 ![Sicherheitsschlüssel auswählen und auf „Verwalten" klicken](images/EMIGA_IDM_Zuruecksetzen_03.png)
 :::
+
+:::
+
+:::{.cr-section layout="sidebar-left"}
 
 :::{focus-on="cr-support"}
 ## Support
