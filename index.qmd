@@ -40,6 +40,8 @@ Diese Seite informiert Sie über das Identitätsmanagement in EMIGA. Sie lernen
 :::
 
 :::{focus-on="cr-cover"}
+[Teil 1 · Grundlagen]{.idm-kicker}
+
 ## Was ist das Identitätsmanagement?
 
 Die Abkürzung **IDM** steht für Identitätsmanagement. Dabei verwaltet die Administration einer Einrichtung die Nutzendenkonten der Einrichtung in EMIGA. Über dieses System können Konten erstellt und verwaltet werden, zum Beispiel indem Rollen und Zugriffsrechte festgelegt werden.
@@ -66,6 +68,8 @@ Zur Authentifizierung wird ein Sicherheitsschlüssel (ein sogenannter **Passkey*
 :::{.cr-section layout="sidebar-right"}
 
 :::{focus-on="cr-need"}
+[Teil 2 · Ersteinrichtung]{.idm-kicker}
+
 ## Schritt-für-Schritt-Anleitung
 
 Diese Schritt-für-Schritt-Anleitung führt Sie durch den Authentifizierungsprozess.
@@ -241,6 +245,12 @@ Nun haben Sie Ihr Nutzendenkonto und den Sicherheitsschlüssel erfolgreich einge
 :::{.cr-section layout="sidebar-left"}
 
 :::{focus-on="cr-step-open-app"}
+[Teil 3 · Anmeldung]{.idm-kicker}
+
+## Anmeldung in SurvNetEM
+
+Nachdem Ihr Nutzendenkonto und Sicherheitsschlüssel eingerichtet sind, nutzen Sie diesen ab sofort bei jeder Anmeldung.
+
 ### Anwendung aufrufen
 
 Im zweiten Schritt nutzen Sie den konfigurierten Sicherheitsschlüssel, um sich in EMIGA bzw. SurvNetEM anzumelden.
@@ -321,6 +331,8 @@ Sie befinden sich nun in SurvNetEM und können mit Ihrer Arbeit starten.
 :::{.cr-section layout="sidebar-right"}
 
 :::{focus-on="cr-locked"}
+[Teil 4 · Konto gesperrt & zurücksetzen]{.idm-kicker}
+
 ## Konto gesperrt
 
 ### Was kann ich tun, wenn das EMIGA-Konto nach mehrmaliger fehlgeschlagener Anmeldung gesperrt wurde?
@@ -385,6 +397,8 @@ In dem sich öffnenden Fenster können Sie den Schlüssel zurücksetzen.
 :::{.cr-section layout="sidebar-left"}
 
 :::{focus-on="cr-support"}
+[Teil 5 · Support]{.idm-kicker}
+
 ## Support
 
 ### Wen kann ich kontaktieren, wenn ich Hilfe benötige?
@@ -411,6 +425,87 @@ Füllen Sie gerne die Umfrage zur Evaluation des Materials aus:\
 
 Sie haben das Ende des Materials erreicht.
 :::
+
+:::
+
+::: {.idm-quiz}
+
+<h2>Kurzer Wissens-Check</h2>
+
+<p>Testen Sie, was von der Anleitung hängengeblieben ist. Die Auswertung erfolgt direkt in Ihrem Browser, es werden keine Daten übertragen.</p>
+
+<form id="idm-quiz-form">
+
+<fieldset class="idm-quiz-question">
+<legend>1. Wofür steht die Abkürzung „IDM"?</legend>
+<label><input type="radio" name="q1" value="a"> Internes Diagnose-Modul</label>
+<label><input type="radio" name="q1" value="b" data-correct="true"> Identitätsmanagement</label>
+<label><input type="radio" name="q1" value="c"> Interner Datenmanager</label>
+</fieldset>
+
+<fieldset class="idm-quiz-question">
+<legend>2. Welchen Anmeldestandard nutzt EMIGA zur Authentifizierung?</legend>
+<label><input type="radio" name="q2" value="a"> OAuth</label>
+<label><input type="radio" name="q2" value="b"> SAML</label>
+<label><input type="radio" name="q2" value="c" data-correct="true"> WebAuthn</label>
+</fieldset>
+
+<fieldset class="idm-quiz-question">
+<legend>3. Was ist der Passkey bei EMIGA konkret?</legend>
+<label><input type="radio" name="q3" value="a"> Eine SMS mit Einmalcode</label>
+<label><input type="radio" name="q3" value="b" data-correct="true"> Ein physischer Sicherheitsschlüssel (Hardware-Token)</label>
+<label><input type="radio" name="q3" value="c"> Ein Fingerabdruck-Scan</label>
+</fieldset>
+
+<fieldset class="idm-quiz-question">
+<legend>4. Was passiert, wenn Sie den Sicherheitsschlüssel per „Reset" zurücksetzen?</legend>
+<label><input type="radio" name="q4" value="a"> Nur der EMIGA-Zugang wird gelöscht</label>
+<label><input type="radio" name="q4" value="b"> Es wird nur die PIN zurückgesetzt</label>
+<label><input type="radio" name="q4" value="c" data-correct="true"> Der gesamte gespeicherte Zugang wird gelöscht, auch für andere Dienste</label>
+</fieldset>
+
+<fieldset class="idm-quiz-question">
+<legend>5. An wen wenden Sie sich bei technischen Problemen mit dem Identitätsmanagement?</legend>
+<label><input type="radio" name="q5" value="a"> emiga@rki.de</label>
+<label><input type="radio" name="q5" value="b" data-correct="true"> support@emiga-rki.de</label>
+<label><input type="radio" name="q5" value="c"> Die Windows-Einstellungen</label>
+</fieldset>
+
+<button type="submit" class="idm-quiz-submit">Auswertung anzeigen</button>
+
+</form>
+
+<p id="idm-quiz-result" class="idm-quiz-result" role="status" aria-live="polite"></p>
+
+<script>
+(function () {
+  var form = document.getElementById("idm-quiz-form");
+  var result = document.getElementById("idm-quiz-result");
+  if (!form) return;
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    var fieldsets = form.querySelectorAll(".idm-quiz-question");
+    var correct = 0;
+    fieldsets.forEach(function (fieldset) {
+      var inputs = fieldset.querySelectorAll("input[type=radio]");
+      var checked = fieldset.querySelector("input[type=radio]:checked");
+      var isCorrect = checked && checked.dataset.correct === "true";
+      if (isCorrect) correct += 1;
+      inputs.forEach(function (input) {
+        var label = input.closest("label");
+        label.classList.remove("idm-quiz-correct", "idm-quiz-incorrect");
+        if (input.dataset.correct === "true") {
+          label.classList.add("idm-quiz-correct");
+        } else if (input === checked) {
+          label.classList.add("idm-quiz-incorrect");
+        }
+      });
+    });
+    var total = fieldsets.length;
+    result.textContent = "Sie haben " + correct + " von " + total + " Fragen richtig beantwortet.";
+  });
+})();
+</script>
 
 :::
 
