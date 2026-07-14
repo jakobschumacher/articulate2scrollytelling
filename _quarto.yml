@@ -1,21 +1,7 @@
 project:
   type: website
+  output-dir: _site
 
 website:
-  title: "Articulate2Closereadd"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
-
-format:
-  html:
-    theme:
-      - cosmo
-      - brand
-    css: styles.css
-    toc: true
-
-
-
+  title: "Identitätsmanagement in EMIGA"
+  site-url: "https://jakobschumacher.github.io/articulate2scrollytelling/"
